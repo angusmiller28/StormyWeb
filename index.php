@@ -9,7 +9,7 @@
     
     <p id="timeLabel">At 7:15 AM it will be</p>
     
-    <h1 id="temperatureLabel">46</h1>
+    <h1 id="temperatureLabel">46&#8451;</h1>
     
     <p id="humidityLabel">HUMIDITY</p>
     <p id="humidityData">0.93</p>
