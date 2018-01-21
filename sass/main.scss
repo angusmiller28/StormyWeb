@@ -1,0 +1,39 @@
+@import '_colours';
+
+body {
+    background-color: $backgroundColorClear;
+}
+
+footer {
+    background-color: darken($backgroundColorClear, 10%);
+    #footerSection {
+        a {
+            color:  darken($backgroundColorClear, 30%);
+            text-decoration: none;
+        }
+    }
+}
+
+
+#refreshIcon {
+    background-color: darken($backgroundColorClear, 20%); 
+    color: white;
+}
+
+/*************************
+********* FONTS **********
+*************************/
+p, li, h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+    
+#title {
+    font-family: 'Lobster', cursive;
+    color: white;
+    font-size: 4em;
+}
+
+#temperatureLabel::after {
+    content: '\2109';
+}

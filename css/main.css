@@ -1,0 +1,29 @@
+body {
+  background-color: #F0CA4D; }
+
+footer {
+  background-color: #ecbc1e; }
+  footer #footerSection a {
+    color: #97770d;
+    text-decoration: none; }
+
+#refreshIcon {
+  background-color: #c69c11;
+  color: white; }
+
+/*************************
+********* FONTS **********
+*************************/
+p, li, h1 {
+  font-family: 'Montserrat', sans-serif;
+  color: white; }
+
+#title {
+  font-family: 'Lobster', cursive;
+  color: white;
+  font-size: 4em; }
+
+#temperatureLabel::after {
+  content: '\2109'; }
+
+/*# sourceMappingURL=main.css.map */

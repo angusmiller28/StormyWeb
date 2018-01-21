@@ -1,0 +1,30 @@
+@import '_colours';
+
+.btnCircleSmall {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    background-color: $themeAccentClear;
+    border-radius: 100%;
+}
+
+/**********************
+****** Animation *****/
+.refreshIconAnimation {
+    div {
+        animation-name: spinner;
+        animation-duration: 4s;
+        animation-timing-function: linear;  
+    }  
+}
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,70 +1,69 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet"> 
+    <style defer src="/css/fontawesome-all.min.css"></style>
+    <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css"/>
+    <link rel="stylesheet" type="text/css" href="css/components.css"/>
+    <script defer src="fontawesome-all.js"></script>
+    <script defer src="js/main.js"></script>
 </head>
-<body >
-    <h1>Stormy</h1>
-    <p>A weather app for the real</p>
-    <h3 id="locationLabel">Alcatraz Calfornia, CA</h3>
+<body>
+   <nav id="navSection">
+       <ul>
+         <li><div class="btnCircleSmall"><i class="fas fa-map-marker"></i></div></li> 
+          <li><div class="btnCircleSmall"><i class="fas fa-ellipsis-h"></i></div></li> 
+       </ul>
+   </nav>
+   <div>
+       <ul>
+           <li></li>
+       </ul>
+   </div>
+   <div id="outerWrapper">
+   <div class="wrapper">
+    <div id="refreshIcon" onclick="refreshData()">
+        <div><i class="fas fa-sync-alt"></i></div>
+    </div>
+    <h1 id="title">Stormy</h1>
     
-    <p id="timeLabel">At 7:15 AM it will be</p>
+    <ul id="locationSection">
+        <li><h3 id="cityLabel">-</h3></li>
+        <li><h3 id="countryLabel">-</h3></li>
+        <li id="timeLabel">-</li>
+    </ul>
     
-    <h1 id="temperatureLabel">46&#8451;</h1>
     
-    <p id="humidityLabel">HUMIDITY</p>
-    <p id="humidityData">0.93</p>
+    <h1 id="temperatureLabel">-</h1>
     
     
-    <p id="percentageLabel">HUMIDITY</p>
-    <p id="percentageData">0.93</p>
+    <ul id="detailsSection">
+        <ul id="humiditySection">
+             <li id="humidityLabel">HUMIDITY</li>
+             <li id="humidityData">-</li>
+        </ul>
+        <ul id="precipSection">
+            <li id="precipLabel">RAIN/SNOW</li>
+            <li id="precipData">-</li>
+        </ul>
+    </ul> 
     
-    <p id="summaryLabel">Mostly Cloudy</p>
+    <p id="summaryLabel">-</p>
+</div>
+   
+   <footer>
+       <ul id="footerSection">
+           <li><a href="https://darksky.net/forecast/40.7127,-74.0059/us12/en">Powered by Dark Sky</a></li>
+            <li>Made with <i class="fas fa-heart"></i> by Angus Miller <?php echo date("Y"); ?></li>
+        </ul> 
+    </footer>
+    </div>
+    
     
 </body>
-<script type="application/javascript">
-    $(document).ready(function(){
-        getWeather();
-        var location = getLocation();
-        var apikey = "0ebb9731ed62a65ff62287e2dd8eddfd";
-        var url = "https://api.darksky.net/forecast/" + apikey + "/" + getLocation();
-        
-        console.log(url);
-        
-        function getWeather(){
-          $.ajax({
-              format: "jsonp",
-              dataType: "jsonp",
-              url: "https://api.darksky.net/forecast/0ebb9731ed62a65ff62287e2dd8eddfd/37.8267,-122.4233",
-              success: function(json) {  
-                updateUI(json);
-              },
-              method: "GET"
-          });
-        }
-        
-        function getLocation(){
-            $.ajax({
-                format: "jsonp",
-                dataType: "jsonp",
-                url: "http://ip-api.com/json",
-                success: function(data) {
-                    var location = (data.lat + "," + data.lon);
-                    return location;
-                },
-                method: "GET"
-            });
-            return location;
-        }
-        
-        function updateUI(data){
-            console.log(data.longitude);
-        }
-        
-    });
-    
 
-    
-</script>
 </html>
 
 
